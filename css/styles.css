@@ -1,5 +1,199 @@
+:root {
+  --background: #D9F8FF;
+  --first-color: #FF6830;
+  --dark-shadow: #B6D0D6;
+  --soft-shadow: #FCFFFF;
+  --black: #425053;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--black);
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+main {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  margin: 6.6vh 0;
+}
+
+.artworks {
+  width: 100%;
+  height: 43.49vh;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.artworks__image-container {
+  width: 208px;
+  height: 208px;
+  padding: 3.73%;
+  position: absolute;
+  top: 29%;
+  left: calc(50% - 208px / 2);
+  background-color: var(--background);
+  border-radius: 18px;
+  box-shadow:
+    10px 10px 35px var(--dark-shadow),
+    -10px -10px 35px var(--soft-shadow);
+    z-index: 1;
+}
+
+.artworks__image-container--small {
+  width: 165px;
+  height: 165px;
+  padding: 2.7%;
+  position: absolute;
+  top: 0;
+  left: -6%;
+  background-color: var(--background);
+  border-radius: 18px;
+  box-shadow:
+    5px 5px 30px var(--dark-shadow),
+    -10px -10px 25px var(--soft-shadow);
+    z-index: 0;
+}
+
+.artworks__image-container--small:nth-last-child(1) {
+  left: initial;
+  right: -6%;
+}
+
+.artworks__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.player-info {
+  width: 74.7%;
+  margin-bottom: 2.25vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.song-info__artist,
+.song-info__playlist {
+  font-size: 1rem;
+}
+
+.button--small {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  border: none;
+  border-radius: 50%;
+  box-shadow:
+    5px 5px 30px var(--dark-shadow),
+    -10px -10px 25px var(--soft-shadow);
+}
+
+.player {
+  width: 80%;
+  height: 16.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.player__progress-bar {
+  width: 100%;
+  height: 15px;
+  position: relative;
+}
+
+.player__bar {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 5px;
+  background-color: var(--background);
+  border-radius: 5px;
+  box-shadow:
+    2px 2px 5px var(--dark-shadow),
+    2px -2px 5px var(--soft-shadow);
+}
+
+.player__ball {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 0;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+
+.player_handler {
+  width: 80%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button--medium {
+  width: 50px;
+  height: 50px;
+  background-color: var(--background);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    5px 5px 30px var(--dark-shadow),
+    -10px -10px 25px var(--soft-shadow);
+}
+
+.button__large {
+  width: 80px;
+  height: 80px;
+  background-color: var(--background);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    5px 5px 30px var(--dark-shadow),
+    -10px -10px 25px var(--soft-shadow);
 }
