@@ -199,6 +199,19 @@ main {
     -10px -10px 25px var(--soft-shadow);
 }
 
+.button__logo--liked {
+  animation: beat 1.6s ease-in-out 0.2s 1;
+}
+
+@keyframes beat {
+  0%, 50%, 100% {
+    transform: scale(1, 1);
+  }
+  25%, 75% {
+    transform: scale(1.2, 1.2);
+  }
+}
+
 @media (min-width: 501px) {
   main {
     border-radius: 18px;
