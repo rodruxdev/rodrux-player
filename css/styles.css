@@ -152,6 +152,22 @@ main {
   box-shadow:
     2px 2px 5px var(--dark-shadow),
     2px -2px 5px var(--soft-shadow);
+  overflow: hidden;
+}
+
+.player__bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 5px;
+  background-color: var(--first-color);
+  animation: roll 60s linear infinite;
+}
+
+.player__progress-bar--pause .player__bar::before {
+  animation-play-state: paused;
 }
 
 .player__ball {
@@ -161,6 +177,11 @@ main {
   left: 0;
   background-color: var(--first-color);
   border-radius: 50%;
+  animation: play 60s linear 0.2s infinite;
+}
+
+.player__progress-bar--pause .player__ball {
+  animation-play-state: paused;
 }
 
 .player_handler {
@@ -209,6 +230,24 @@ main {
   }
   25%, 75% {
     transform: scale(1.2, 1.2);
+  }
+}
+
+@keyframes play {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(100);
   }
 }
 
