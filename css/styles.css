@@ -50,6 +50,7 @@ main {
 
 .title {
   margin: 6.6vh 0;
+  animation: bounce-in 2s ease 1;
 }
 
 .artworks {
@@ -261,6 +262,27 @@ main {
 
 .button__logo--liked {
   animation: beat 1.6s ease-in-out 0.2s 1;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translateY(-10vh) scaleY(1);
+  }
+  40%{
+    transform: translateY(-4vh) scaleY(1);
+  }
+  70%{
+    transform: translateY(-2vh) scaleY(1);
+  }
+  20%, 50%, 80%{
+    transform: translateY(0) scale(1.05);
+  }
+  80%{
+    transform: translateY(0) scale(1.005);
+  }
+  100% {
+    ransform: translateY(0) scale(1);
+  }
 }
 
 @keyframes beat {
