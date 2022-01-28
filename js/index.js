@@ -1,9 +1,28 @@
+const SONGS = [
+  {
+    title: "Never Stop Learning",
+    artist: "Rodrigo Goitia",
+    album: "Inspiration by Platzi"
+  },
+  {
+    title: "Don't be afraid to create",
+    artist: "Rodrigo Goitia",
+    album: "Impro for life"
+  },
+  {
+    title: "Images from Content Reel",
+    artist: "Images by Tung Hoang",
+    album: "By Microsoft and Eugene Gavriloff"
+  }
+]
+
 const likeButton = document.getElementById("like");
 const likeLogo = document.getElementById("like-logo");
 const pausePlayButton = document.getElementById("play-pause");
 const progressBar = document.getElementById("progress-bar");
 const backwardButton = document.getElementById("backward");
 const forwardButton = document.getElementById("forward");
+const songInfo = document.getElementById("song-info")
 
 
 const togleLikeSong = () => {
@@ -35,6 +54,32 @@ const beginNewSong = () => {
   }, 200);
 }
 
+const beginPlayer = () => {
+  let index = 0;
+  function newSong(direction){
+    index += direction;
+    index = index > 2 ? 0 : index
+    index = index < 0 ? 2 : index
+    const newSong = SONGS[index];
+    const oldInfo = songInfo.childNodes;
+    const titleP = document.createElement("p");
+    titleP.classList.add("song-info__title")
+    titleP.appendChild(document.createTextNode(newSong.title))
+    songInfo.replaceChild(titleP, oldInfo[1])
+    const artistP = document.createElement("p");
+    artistP.classList.add("song-info__artist")
+    artistP.appendChild(document.createTextNode(newSong.artist))
+    songInfo.replaceChild(artistP, oldInfo[3])
+    const albumP = document.createElement("p");
+    albumP.classList.add("song-info__playlist")
+    albumP.appendChild(document.createTextNode(newSong.album))
+    songInfo.replaceChild(albumP, oldInfo[5])
+  }
+  return newSong;
+}
+
+const changeSong = beginPlayer();
+
 const backwardSong = () => {
   const leftSong = document.getElementsByClassName("artworks__image-container--left")[0];
   leftSong.classList.remove("artworks__image-container--left");
@@ -55,7 +100,10 @@ const backwardSong = () => {
   centerSong.classList.add("backward");
 
   beginNewSong();
+  changeSong(-1)
 }
+
+
 
 const forwardSong = () => {
   const leftSong = document.getElementsByClassName("artworks__image-container--left")[0];
@@ -77,7 +125,9 @@ const forwardSong = () => {
   centerSong.classList.add("forward");
 
   beginNewSong();
+  changeSong(1)
 }
+
 
 likeButton.addEventListener('click', togleLikeSong);
 pausePlayButton.addEventListener('click', pausePlaySong);
