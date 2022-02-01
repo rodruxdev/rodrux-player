@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <title>RODRUX PLAYER</title>
 </head>
 <body>
@@ -19,13 +18,13 @@
     </section>
     <section class="artworks">
       <div class="artworks__image-container artworks__image-container--left">
-        <img src="assets/images/artwork1.png" alt="Album Image" class="artworks__image">
+        <img src="assets/images/artwork1.png" alt="Album Image" class="artworks__image" loading="lazy">
       </div>
       <div class="artworks__image-container artworks__image-container--big">
-        <img src="assets/images/artwork2.png" alt="Album Image" class="artworks__image">
+        <img src="assets/images/artwork2.png" alt="Album Image" class="artworks__image" loading="lazy">
       </div>
       <div class="artworks__image-container artworks__image-container--right">
-        <img src="assets/images/artwork3.png" alt="Album Image" class="artworks__image">
+        <img src="assets/images/artwork3.png" alt="Album Image" class="artworks__image" loading="lazy">
       </div>
     </section>
     <section class="player-info">
@@ -35,7 +34,7 @@
         <p class="song-info__playlist">Inspiration by Platzi</p>
       </div>
       <button class="button--small" id="like" aria-label="Like button">
-        <img src="assets/icons/heart-outline.svg" alt="like logo" class="button__logo" id="like-logo">
+        <img src="assets/icons/heart-outline.svg" alt="like logo" class="button__logo" id="like-logo" loading="lazy">
       </button>
     </section>
     <section class="player">
@@ -45,17 +44,17 @@
       </div>
       <div class="player_handler">
         <button class="button--medium" id="backward" aria-label="previous song">
-          <img src="assets/icons/player-track-back.svg" alt="backward logo" class="button__logo">
+          <img src="assets/icons/player-track-back.svg" alt="backward logo" class="button__logo" loading="lazy">
         </button>
         <button class="button--large" id="play-pause" aria-label="play pause song">
-          <img src="assets/icons/pause-line.svg" alt="play pause logo" class="button__logo">
+          <img src="assets/icons/pause-line.svg" alt="play pause logo" class="button__logo" loading="lazy">
         </button>
         <button class="button--medium" id="forward" aria-label="next song">
-          <img src="assets/icons/player-track-next.svg" alt="next logo" class="button__logo">
+          <img src="assets/icons/player-track-next.svg" alt="next logo" class="button__logo" loading="lazy">
         </button>
       </div>
     </section>
   </main>
-  <script src="./js/index.js" defer></script>
+  <script src="./js/index.js" async></script>
 </body>
 </html>
