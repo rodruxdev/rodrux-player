@@ -327,7 +327,7 @@ button:focus {
 
 @keyframes swift-left {
   0% {
-    transform: scale(1.26, 1.26) translate(max(calc((100vw - 130%) / 2), 122px) , 10vh);
+    transform: scale(1.26, 1.26) translate(min(calc((100vw - 130%) / 2), 122px) , 10vh);
   }
   100% {
     transform: translateX(max(-6vw, -30px));
