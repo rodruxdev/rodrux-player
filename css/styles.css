@@ -237,7 +237,7 @@ main {
     -10px -10px 25px var(--soft-shadow);
 }
 
-.button__large {
+.button--large {
   width: 80px;
   height: 80px;
   background-color: var(--background);
@@ -263,6 +263,12 @@ main {
 
 .button__logo--liked {
   animation: beat 1.6s ease-in-out 0.2s 1;
+}
+
+button:focus-visible,
+button:focus {
+  outline-color: var(--first-color);
+  outline-width: 1px  ;
 }
 
 @keyframes bounce-in {
