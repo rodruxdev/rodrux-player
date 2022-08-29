@@ -4,6 +4,8 @@ This project is a practice to create a layout with neomorphism and animations wi
 
 All the feedback and contributions are welcome. 🙋🏾
 
+<img src="./assets/images/preview.png" alt="Preview of Rodrux Player">
+
 ## Features
 
 - Change “songs” with animation.
